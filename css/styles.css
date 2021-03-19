@@ -1,0 +1,156 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-family: "Kumbh Sans", sans-serif;
+  color: #4a4b5e;
+  font-weight: 400;
+  text-align: center;
+  background: linear-gradient(to bottom, #af67e9, #6565e7);
+}
+@media screen and (min-width: 576px) {
+  body {
+    text-align: left;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  color: #1d1e35 !important;
+}
+
+.container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  width: 85%;
+  margin: 0 auto;
+  padding: 0 5px 5px 5px;
+  display: grid;
+  border-radius: 18px;
+  grid-template-columns: 1fr;
+  grid-gap: 0px;
+}
+@media screen and (min-width: 576px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    padding: 50px 50px 50px 0;
+    width: 60%;
+  }
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+.accordion-header, .accordion-button, .accordion-collapse {
+  border: none;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #e7e7e9;
+}
+
+.accordion-button {
+  border-radius: 0;
+  font-size: 0.85rem;
+}
+
+.accordion-button:not(.collapsed) {
+  font-weight: 700;
+  background-color: white;
+  color: inherit;
+}
+
+.accordion-button::after {
+  background-image: url("../images/icon-arrow-down.svg");
+}
+
+.accordion-body {
+  color: #787887;
+}
+
+.faq-side {
+  margin-top: 105px;
+}
+@media screen and (min-width: 576px) {
+  .faq-side {
+    margin-top: 0px;
+  }
+}
+.faq-side .title {
+  font-weight: 700;
+}
+
+.img-side {
+  display: block;
+}
+.img-side .mobile__image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateY(-52.5%) translateX(-45%) rotate3d(0, 1, 0.5, 3.142rad);
+}
+.img-side .mobile__shadow {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateY(0) translateX(-50%) rotate3d(0, 1, 0.5, 3.142rad);
+}
+@media screen and (min-width: 576px) {
+  .img-side {
+    display: none;
+  }
+}
+
+.image {
+  display: none;
+}
+@media screen and (min-width: 576px) {
+  .image {
+    display: block;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .image img {
+    width: 100%;
+    top: 24vh;
+    transform: translateY(-50%);
+    left: -4vw;
+    position: absolute;
+  }
+  .image img .img__shadow {
+    width: 200%;
+    left: 1vw;
+    top: 30vh;
+  }
+}
+
+.img__box {
+  display: none;
+}
+@media screen and (min-width: 576px) {
+  .img__box {
+    display: block;
+    position: absolute;
+    top: 22.5vh;
+    left: -7.5vw;
+    z-index: 2;
+    width: 15vw;
+    height: 30vh;
+  }
+}

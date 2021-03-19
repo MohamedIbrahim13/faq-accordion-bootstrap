@@ -1,0 +1,173 @@
+@import "variables";
+@import "mixins";
+
+@include mQ(576px) {}
+
+html,body{
+    height: 100%;
+}
+
+body {
+
+    margin: 0;
+    padding: 0;
+    font-size: $fontSize;
+    font-family: $bodyFont;
+    color:$verydarkgrayishblue;
+    font-weight: 400;
+    text-align: center;
+    background: linear-gradient(to bottom,$softViolet,$softBlue);
+
+    @include mQ(576px) {
+        text-align: left;
+    }
+
+}
+
+//reset
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+    {
+    margin: 0;
+    padding: 0;
+    color: $veryDarkdesaturatedblue !important;
+}
+
+
+
+
+
+.container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    background:white;
+    width: 85%;
+    margin: 0 auto;
+    padding: 0 5px 5px 5px;
+    display: grid;
+    border-radius: 18px;
+    grid-template-columns: 1fr;
+    grid-gap: 0px;
+    
+    
+    @include mQ(576px) {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        padding: 50px 50px 50px 0;
+        width: 60%;
+    }
+}
+
+
+
+img {
+    height:100%;
+    width:100%;
+}
+
+.accordion-header,.accordion-button,.accordion-collapse {
+    border:none;
+
+    
+}
+.accordion-item {
+    border-bottom: 1px solid $lightgrayishblue;
+}
+.accordion-button{
+    border-radius:0;
+    font-size:0.85rem;
+}
+
+.accordion-button:not(.collapsed) {
+    font-weight: 700;
+    background-color: white;
+    color:inherit;
+}
+
+.accordion-button::after{
+    background-image:url('../images/icon-arrow-down.svg');
+    
+}
+
+.accordion-body{
+    color:$darkgrayishblue;
+}
+
+.faq-side{
+    margin-top: 105px;
+    @include mQ(576px) {
+        margin-top: 0px;
+    }
+    .title{
+        font-weight:700;
+    }
+}
+
+.img-side {
+    display: block;
+
+    .mobile__image {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateY(-52.5%) translateX(-45%) rotate3d(0, 1, 0.5, 3.142rad);
+        
+    }
+
+    .mobile__shadow {
+        position: absolute;
+        top: -50%;
+        left: 50%;
+        transform: translateY(0) translateX(-50%) rotate3d(0, 1, 0.5, 3.142rad);
+
+    }
+
+    @include mQ(576px) {
+        display: none;
+    }
+}
+.image {
+    display:none;
+    @include mQ(576px) {
+        display:block;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            top: 24vh;
+            transform: translateY(-50%);
+            left: -4vw;
+            position: absolute;
+
+            .img__shadow {
+                width: 200%;
+                left: 1vw;
+                top: 30vh;
+            }
+        }
+    }
+
+}
+
+
+
+.img__box {
+    display:none;
+    @include mQ(576px) {
+        display:block;
+        position: absolute;
+        top: 22.5vh;
+        left: -7.5vw;
+        z-index: 2;
+        width: 15vw;
+        height: 30vh;
+    }
+
+}
